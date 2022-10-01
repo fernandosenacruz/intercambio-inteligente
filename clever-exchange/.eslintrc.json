@@ -23,7 +23,7 @@
         "space-before-function-paren": "off",
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/no-use-before-define": [
-            "error"
+            "warn"
         ],
         "react/jsx-filename-extension": [
             "warn",
@@ -34,10 +34,10 @@
             }
         ],
         "@typescript-eslint/no-shadow": [
-            "error"
+            "warn"
         ],
         "import/extensions": [
-            "error",
+            "warn",
             "ignorePackages",
             {
                 "ts": "never",
