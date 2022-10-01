@@ -4,16 +4,23 @@ import RigthDrawer from './RigthDrawer'
 import { AppBar, IconButton, Toolbar } from '@mui/material'
 import MenuOpenRoundedIcon from '@mui/icons-material/MenuOpenRounded'
 import Logo from '../partials/Logo'
+import { useLocation } from 'react-router-dom'
 
 function Header () {
   const [showDrawer, setShowDrawer] = React.useState(false)
+
+  const LOCATION = useLocation()
+  const route = LOCATION.pathname.split('/')
+  const containsNft = route.findIndex(e => e === 'nft')
 
   return (
     <React.Fragment>
       <Box>
         <AppBar position="fixed">
           <Toolbar sx={{ backgroundColor: '#14152c' }} >
-            <IconButton sx={{ flexGrow: 1, justifyContent: 'flex-start', color: '#fff' }}>
+            <IconButton
+              sx={{ flexGrow: 1, justifyContent: 'flex-start', color: '#fff' }}
+            >
               <Logo />
             </IconButton>
             <IconButton
@@ -29,7 +36,11 @@ function Header () {
           </Toolbar>
         </AppBar>
       </Box>
-      <RigthDrawer showDrawer={showDrawer} setShowDrawer={setShowDrawer} />
+      <RigthDrawer
+        showDrawer={showDrawer}
+        setShowDrawer={setShowDrawer}
+        route={containsNft}
+      />
     </React.Fragment >
   )
 }
