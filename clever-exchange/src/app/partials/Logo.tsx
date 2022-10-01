@@ -1,12 +1,12 @@
 import * as React from 'react'
-import { Grid, Typography } from '@mui/material'
-import { Link } from 'react-router-dom'
 import LOGO from '../assets/logo_klever.png'
+import { Grid, Typography } from '@mui/material'
+import StyledLink from './StyledLink'
 
 function Logo () {
   return (
     <React.Fragment>
-      <Link to="/home" style={{ textDecoration: 'none', color: 'inherit' }}>
+      <StyledLink path={'/pt'}>
         <Grid container>
           <Grid item xs={4}>
             <img src={LOGO} alt="logo fake da klever" width="60rem" />
@@ -26,7 +26,7 @@ function Logo () {
             </Typography>
           </Grid>
         </Grid>
-      </Link>
+      </StyledLink>
     </React.Fragment>
   )
 }
